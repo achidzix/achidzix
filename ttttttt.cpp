@@ -8,8 +8,6 @@ char name[100];
 string RegNum;
 int dprt;
 int number;
-int prog;
-char choice;
 int days;
 
 class Library
@@ -23,6 +21,7 @@ void ShowDetails();
 
 void Library::books()
 {
+	int prog;
 	cout<<"select program"<<endl;
 	cout<<"1\t\t"<<"biotech"<<endl;
 	cout<<"2\t\t"<<"food processing and technology(fpt)"<<endl;
@@ -30,8 +29,8 @@ void Library::books()
 	cout<<"4\t\t"<<"phamacy"<<endl;
 	cout<<"5\t\t"<<"information security(isa)"<<endl;
 	cout<<"USE THE NUMBERS TO SELECT FOR THE PROGRAM"<<endl;
-	
 	cin>>prog;
+	
 	switch (prog)
 	{
 		case 1:
@@ -60,15 +59,24 @@ void Library::books()
 	   
             cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
             cin>>number;
-            cout<<"book borrowed :"<<my_strings[number-1] << endl;
-            cout<<endl;
-            cout<<"enter number of days for borrowing:"<<endl;
-            cin>>days;				
-			
-	    }
-	    break;
+            if(number<=6)
+            {
+             cout<<"book borrowed :"<<my_strings[number-1] << endl;
+	        cout<<endl;		
+	        cout<<"enter number of days for borrowing:"<<endl;
+            cin>>days;           	
+			}
+	        else
+	        {
+	        cout<<"book not in the database\nPlease choose another one!"<<endl;
+			books();	        	
+			}
+				
+	        }
+	        break;
+	    
 		case 2:
-	 {
+	   {
 		   
 	        vector<string> my_strings;
 	    
@@ -94,119 +102,150 @@ void Library::books()
 	   
             cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
             cin>>number;
-            cout<<"book borrowed :"<<my_strings[number-1] << endl;
-            cout<<endl;
-            cout<<"enter number of days for borrowing:"<<endl;
-            cin>>days;				
-		}
-		break;
+            if(number<=6)
+            {
+             cout<<"book borrowed :"<<my_strings[number-1] << endl;
+	        cout<<endl;		
+	        cout<<"enter number of days for borrowing:"<<endl;
+            cin>>days;           	
+			}
+	        else
+	        {
+	        cout<<"book not in the database\nPlease choose another one!"<<endl;
+			books();	        	
+			}				
+		    }
+		    break;
 			
 		case 3:
 			{
 						    vector<string> my_strings;
 	    
-	my_strings.push_back("c++ programming");
-	my_strings.push_back("object oriented programming in c++");
-	my_strings.push_back("database design and concept");
-	my_strings.push_back("discrete structures ");
-    my_strings.push_back("data structures and algorithms");
-    my_strings.push_back("web design concept");
+	        my_strings.push_back("c++ programming");
+	        my_strings.push_back("object oriented programming in c++");
+        	my_strings.push_back("database design and concept");
+	        my_strings.push_back("discrete structures ");
+            my_strings.push_back("data structures and algorithms");
+            my_strings.push_back("web design concept");
     
-    cout <<"books available for borrow are :"<< endl;
-    cout <<endl;
+            cout <<"books available for borrow are :"<< endl;
+            cout <<endl;
     
-    cout <<"book id\t\t\t\t"<<"book name"<<endl;
+            cout <<"book id\t\t\t\t"<<"book name"<<endl;
     
-    cout <<"1"<<"\t\t\t\t "<<  my_strings[0] << endl;
-    cout <<"2"<<"\t\t\t\t "<<  my_strings[1] << endl;
-    cout <<"3"<<"\t\t\t\t "<<  my_strings[2] << endl;
-    cout <<"4"<<"\t\t\t\t "<<  my_strings[3] << endl;
-    cout <<"5"<<"\t\t\t\t "<<  my_strings[4] << endl;
-    cout <<"6"<<"\t\t\t\t "<<  my_strings[5] << endl;
-    cout<<endl; 
+            cout <<"1"<<"\t\t\t\t "<<  my_strings[0] << endl;
+            cout <<"2"<<"\t\t\t\t "<<  my_strings[1] << endl;
+            cout <<"3"<<"\t\t\t\t "<<  my_strings[2] << endl;
+            cout <<"4"<<"\t\t\t\t "<<  my_strings[3] << endl;
+            cout <<"5"<<"\t\t\t\t "<<  my_strings[4] << endl;
+            cout <<"6"<<"\t\t\t\t "<<  my_strings[5] << endl;
+            cout<<endl; 
 	   
-    cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
-    cin>>number;
-    cout<<"book borrowed :"<<my_strings[number-1] << endl;
-	cout<<endl;		
-	cout<<"enter number of days for borrowing:"<<endl;
-    cin>>days;	
+            cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
+            cin>>number;
+            if(number<=6)
+            {
+             cout<<"book borrowed :"<<my_strings[number-1] << endl;
+	        cout<<endl;		
+	        cout<<"enter number of days for borrowing:"<<endl;
+            cin>>days;           	
+			}
+	        else
+	        {
+	        cout<<"book not in the database\nPlease choose another one!"<<endl;
+			books();	        	
+			}	
 			
-	}
-	break;
+	        }
+	        break;
 	
-    case 4:
+        case 4:
     				{
 						    vector<string> my_strings;
 	    
-	my_strings.push_back("pharmacognosy and natural products");
-	my_strings.push_back("human physiology 1");
-	my_strings.push_back("biochemistry");
-	my_strings.push_back("pharmacentical formulations technology ");
-    my_strings.push_back("general microbiology and immunology");
-    my_strings.push_back("introduction to pharmacy");
+           	my_strings.push_back("pharmacognosy and natural products");
+          	my_strings.push_back("human physiology 1");
+        	my_strings.push_back("biochemistry");
+        	my_strings.push_back("pharmacentical formulations technology ");
+            my_strings.push_back("general microbiology and immunology");
+            my_strings.push_back("introduction to pharmacy");
     
-    cout <<"books available for borrow are :"<< endl;
-    cout <<endl;
+            cout <<"books available for borrow are :"<< endl;
+            cout <<endl;
     
-    cout <<"book id\t\t\t\t"<<"book name"<<endl;
+            cout <<"book id\t\t\t\t"<<"book name"<<endl;
     
-    cout <<"1"<<"\t\t\t\t "<<  my_strings[0] << endl;
-    cout <<"2"<<"\t\t\t\t "<<  my_strings[1] << endl;
-    cout <<"3"<<"\t\t\t\t "<<  my_strings[2] << endl;
-    cout <<"4"<<"\t\t\t\t "<<  my_strings[3] << endl;
-    cout <<"5"<<"\t\t\t\t "<<  my_strings[4] << endl;
-    cout <<"6"<<"\t\t\t\t "<<  my_strings[5] << endl;
-    cout<<endl; 
+            cout <<"1"<<"\t\t\t\t "<<  my_strings[0] << endl;
+            cout <<"2"<<"\t\t\t\t "<<  my_strings[1] << endl;
+            cout <<"3"<<"\t\t\t\t "<<  my_strings[2] << endl;
+            cout <<"4"<<"\t\t\t\t "<<  my_strings[3] << endl;
+            cout <<"5"<<"\t\t\t\t "<<  my_strings[4] << endl;
+            cout <<"6"<<"\t\t\t\t "<<  my_strings[5] << endl;
+            cout<<endl; 
 	   
-    cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
-    cin>>number;
-    cout<<"book borrowed :"<<my_strings[number-1] << endl;
-	cout<<endl;		
-	cout<<"enter number of days for borrowing:"<<endl;
-    cin>>days;	
+            cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
+            cin>>number;
+            if(number<=6)
+            {
+            cout<<"book borrowed :"<<my_strings[number-1] << endl;
+	        cout<<endl;		
+	        cout<<"enter number of days for borrowing:"<<endl;
+            cin>>days;           	
+			}
+	        else
+	        {
+	        cout<<"book not in the database\nPlease choose another one!"<<endl;
+			books();	        	
+			}	
 			
-	}
-	break;
+    	    }
+	        break;
 	
-	case 5:
-					{
+        case 5:
+		{
 						    vector<string> my_strings;
 	    
-	my_strings.push_back("introduction of information security");
-	my_strings.push_back("number theory");
-	my_strings.push_back("fundamentals of computer architecture");
-	my_strings.push_back("operating system");
-    my_strings.push_back("programming technics(python)");
-    my_strings.push_back("visual programming");
+	        my_strings.push_back("introduction of information security");
+        	my_strings.push_back("number theory");
+        	my_strings.push_back("fundamentals of computer architecture");
+            my_strings.push_back("operating system");
+            my_strings.push_back("programming technics(python)");
+            my_strings.push_back("visual programming");
     
-    cout <<"books available for borrow are :"<< endl;
-    cout <<endl;
+            cout <<"books available for borrow are :"<< endl;
+            cout <<endl;
     
-    cout <<"book id\t\t\t\t"<<"book name"<<endl;
+            cout <<"book id\t\t\t\t"<<"book name"<<endl;
     
-    cout <<"1"<<"\t\t\t\t "<<  my_strings[0] << endl;
-    cout <<"2"<<"\t\t\t\t "<<  my_strings[1] << endl;
-    cout <<"3"<<"\t\t\t\t "<<  my_strings[2] << endl;
-    cout <<"4"<<"\t\t\t\t "<<  my_strings[3] << endl;
-    cout <<"5"<<"\t\t\t\t "<<  my_strings[4] << endl;
-    cout <<"6"<<"\t\t\t\t "<<  my_strings[5] << endl;
-    cout<<endl; 
+            cout <<"1"<<"\t\t\t\t "<<  my_strings[0] << endl;
+            cout <<"2"<<"\t\t\t\t "<<  my_strings[1] << endl;
+            cout <<"3"<<"\t\t\t\t "<<  my_strings[2] << endl;
+            cout <<"4"<<"\t\t\t\t "<<  my_strings[3] << endl;
+            cout <<"5"<<"\t\t\t\t "<<  my_strings[4] << endl;
+            cout <<"6"<<"\t\t\t\t "<<  my_strings[5] << endl;
+            cout<<endl; 
 	   
-    cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
-    cin>>number;
-    cout<<"book borrowed :"<<my_strings[number-1] << endl;
-	cout<<endl;		
-	cout<<"enter number of days for borrowing:"<<endl;
-    cin>>days;	
-			
-	}
-	break;
+            cout<<"wnich book do you want: "<<"\tUSE BOOK ID"<<endl;
+            cin>>number;
+            if(number<=6)
+            {
+            cout<<"book borrowed :"<<my_strings[number-1] << endl;
+	        cout<<endl;		
+	        cout<<"enter number of days for borrowing:"<<endl;
+            cin>>days;           	
+			}
+	        else
+	        {
+	        cout<<"book not in the database\nPlease choose another one!"<<endl;
+			books();	        	
+			}
+	        }
+	        break;
     	
-    defualt :
-    cout<<"program not avaliable"<<endl;
-    books();	
- }
+        default :
+            cout<<"program not avaliable"<<endl;
+            books();	
+    }
 
 }
 	
@@ -221,9 +260,8 @@ void Library::student_details()
 	cout<<"1\t\t\t"<<"biotech"<<endl;
 	cout<<"2\t\t\t"<<"food processing and technology"<<endl;
 	cout<<"3\t\t\t"<<"software engineering"<<endl;	
-	cout<<"4\t\t\t"<<"information technology"<<endl;
-	cout<<"5\t\t\t"<<"phamacy"<<endl;
-	cout<<"6\t\t\t"<<"information sercurity"<<endl;	
+	cout<<"4\t\t\t"<<"phamacy"<<endl;
+	cout<<"5\t\t\t"<<"information sercurity"<<endl;	
 	cin>>dprt;
 	if(dprt<=5)
 	{
@@ -246,18 +284,19 @@ void Library::student_details()
 void Library::ShowDetails()
 {
 	cout<<"__________________________________________________________________________________________________________________"<<endl;
-	cout<<"name\t\t"<<"registration number\t\t"<<"department\t\t"<<"days for borrow\t\t"<<"borrowed book id"<<endl;
-	cout<<name<<"\t\t"<<RegNum<<"\t\t\t\t"<<dprt<<"\t\t\t"<<days<<"\t\t\t\t"<<number<<endl;
+	cout<<"name\t\t"<<"registration number\t\t"<<"department id\t\t"<<"days for borrow\t\t"<<"borrowed book id"<<endl;
+	cout<<name<<"\t\t"<<RegNum<<"\t\t\t\t"<<dprt<<"\t\t\t"<<days<<"\t\t\t"<<number<<endl;
 	cout<<"__________________________________________________________________________________________________________________"<<endl;
 	time_t tommorrow = time(0);
 	char *dt = ctime(&tommorrow);
-	cout<<"the time now is :"<<dt<<endl;
-	cout<<"return book in "<<days<<" days or you will be funded $2 per day after due date! "<<endl;
+	cout<<"the date and time now is :"<<dt<<endl;
+	cout<<"BOOK TO BE RETURNED IN "<<days<<" DAYS OR "<<name<<" TO BE FUNDED $2 per DAY AFTER DUE DATE! "<<endl;
 }
 
 int main()
 {
-	cout<<"LIBRARY SYSTEM"<<endl;
+char choice;	
+cout<<"LIBRARY SYSTEM"<<endl;
 Library lib_rec;
 lib_rec.books();
 lib_rec.student_details();
@@ -265,13 +304,23 @@ lib_rec.ShowDetails();
 cout<<endl;	
 cout<<"do you want to enter more details : y/n"<<endl;
 cin>>choice;
-if(choice=='y')
+switch (choice)
+{
+ case 'y':
 {
 	main();
 }
-else
-cout<<"thank you for using Anesu Library System"<<endl;
- 
+break;
+case 'n':
+	{
+	cout<<"thank you for using Anesu Library System"<<endl;	
+	}
+	break;
+ default:
+ 	cout<<"assuming your is no "<<endl;
+ 	cout<<"thank you for using Anesu Library System"<<endl;	
+}
+
 system("pause");
 return 0;	
 } 
